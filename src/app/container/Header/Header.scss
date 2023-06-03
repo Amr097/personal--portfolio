@@ -1,0 +1,361 @@
+#home {
+  position: relative;
+  background: url("../../image/bgIMG.png");
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  margin-bottom: 3rem;
+
+  .app__wrapper {
+    padding: 0;
+
+    .copyright {
+      display: none;
+    }
+  }
+}
+
+.app__header {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+
+  padding: 8rem 3rem 0;
+
+  @media screen and (min-width: 2000px) {
+    padding-top: 12rem;
+  }
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 450px) {
+    padding: 6rem 1rem 2rem;
+  }
+
+  .app__header-info {
+    flex: 0.65;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+
+    @media screen and (max-width: 2000px) {
+      width: 100%;
+      margin-right: 0rem;
+    }
+  }
+
+  .app__header-badge {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+
+    .badge-cmp,
+    .tag-cmp {
+      padding: 2rem 3rem;
+      border: var(--white-color);
+      border-radius: 30px;
+      flex-direction: row;
+      width: auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    .tag-cmp {
+      flex-direction: column;
+      margin-top: 3rem;
+      opacity: 0;
+
+      p {
+        width: 100%;
+        text-transform: uppercase;
+        text-align: left;
+        font-size: 1.3rem;
+      }
+    }
+
+    .tag-cmp-animation {
+      animation-name: tagCmpAnimation;
+      animation-duration: 1.5s;
+      animation-delay: 2.5s;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+    }
+
+    .badge-cmp {
+      transform: translateY(9.5rem);
+      h1,
+      p {
+        font-size: 1.6rem;
+      }
+    }
+
+    .badge-cmp-animation {
+      animation-name: badgeCmpAnimation;
+      animation-duration: 4s;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+    }
+
+    span {
+      font-size: 2.5rem;
+
+      @media screen and (min-width: 2000px) {
+        font-size: 5rem;
+      }
+    }
+    span:hover {
+      transform: rotate(20deg);
+    }
+
+    .span-animation {
+      animation-name: waveAnimation;
+      animation-duration: 2.6s;
+      animation-timing-function: ease-in-out;
+    }
+
+    @media screen and (max-width: 1500px) {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+
+  .app__header-circles {
+    flex: 0.75;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    height: 100%;
+    margin-left: 1rem;
+
+    div {
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      background: var(--white-color);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+
+      img {
+        width: 60%;
+        height: 60%;
+      }
+
+      img:hover {
+        scale: 1.08;
+      }
+    }
+
+    div:nth-child(1) {
+      width: 9rem;
+      height: 9rem;
+      animation-delay: 0.5s;
+    }
+    div:nth-child(2) {
+      margin: 6rem;
+      width: 10.5rem;
+      height: 10.5rem;
+    }
+    div:nth-child(3) {
+      width: 6rem;
+      height: 6rem;
+      animation-delay: 0.7s;
+    }
+
+    .circle-cmp-animation {
+      animation-name: circlesCmpAnimation;
+      animation-duration: 0.7s;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+    }
+
+    @media screen and (min-width: 2000px) {
+      div:nth-child(1) {
+        width: 17rem;
+        height: 17rem;
+      }
+      div:nth-child(2) {
+        width: 35rem;
+        height: 35rem;
+      }
+      div:nth-child(3) {
+        width: 20rem;
+        height: 20rem;
+      }
+    }
+
+    @media screen and (max-width: 1200px) {
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-left: 0;
+      div {
+        margin: 1rem;
+      }
+    }
+  }
+}
+
+.app__header-img {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: relative;
+
+  img {
+    width: 100%;
+    object-fit: contain;
+    z-index: 1;
+  }
+
+  .overlay_circle {
+    position: absolute;
+    left: 11rem;
+    top: 3rem;
+    z-index: 0;
+    width: 20%;
+    height: 20%;
+    opacity: 0;
+  }
+
+  .overlay_circle-animation {
+    animation-name: overlayCmpAnimation;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  @media screen and (max-width: 1200px) {
+    margin: 2rem 0;
+  }
+}
+
+//animations
+
+@keyframes badgeCmpAnimation {
+  0% {
+    opacity: 0;
+    scale: 0;
+  }
+
+  25% {
+    opacity: 1;
+    scale: 1;
+    transform: translateY(9.5rem) rotate(0deg);
+  }
+
+  80% {
+    opacity: 1;
+    scale: 1;
+    transform: translateY(9.5rem) rotate(0deg);
+  }
+  81% {
+    transform: translateY(9.5rem) rotate(15deg);
+  }
+
+  95% {
+    transform: translateY(9.5rem) rotate(15deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0) rotate(0);
+  }
+}
+
+@keyframes tagCmpAnimation {
+  0% {
+    opacity: 1;
+    transform: translateX(-35rem);
+  }
+
+  20% {
+    transform: translateX(-20rem);
+  }
+
+  34% {
+    transform: translateX(-20rem);
+  }
+
+  35% {
+    transform: translate(-20rem, 0.7rem);
+  }
+
+  40% {
+    transform: translate(-20rem, -0.7rem);
+  }
+
+  45% {
+    transform: translate(-20rem, 0.7rem);
+  }
+
+  50% {
+    transform: translate(-20rem, -0.7rem);
+  }
+
+  95% {
+    transform: translateX(-25rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes waveAnimation {
+  0% {
+    transform: rotate(8deg);
+  }
+
+  20% {
+    transform: rotate(0deg);
+  }
+
+  40% {
+    transform: rotate(8deg);
+  }
+
+  60% {
+    transform: rotate(0deg);
+  }
+
+  80% {
+    transform: rotate(8deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes circlesCmpAnimation {
+  0% {
+    opacity: 1;
+    scale: 0.2;
+  }
+
+  100% {
+    opacity: 1;
+    scale: 1;
+    transform: rotate(1080deg);
+  }
+}
+
+@keyframes overlayCmpAnimation {
+  0% {
+    opacity: 0;
+    scale: 0;
+  }
+
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
