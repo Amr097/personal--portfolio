@@ -2,17 +2,13 @@
 
 import React from "react";
 import { useInView } from "react-intersection-observer";
-import { easeInOut, motion } from "framer-motion";
 import "./Header.scss";
+import AppWrap from "@/app/wrapper/AppWrap";
 
 const Header = () => {
-  const scaleVariants = {
-    whileInView: { scale: [0, 1], opacity: [0, 1] },
-    transition: { duration: 1, ease: easeInOut },
-  };
   const { ref, inView } = useInView();
   return (
-    <div id="home" className="app__header app__flex" ref={ref}>
+    <div className="app__header app__flex" ref={ref}>
       <div className="app__header-info">
         <div className="app__header-badge">
           <div className="badge-cmp app__flex badge-cmp-animation">
@@ -30,11 +26,12 @@ const Header = () => {
       </div>
 
       <div className="app__header-img">
-        <img src="/images/one.png" akt="profile_bg"></img>
+        <img src="/images/one.png" alt="profile_bg"></img>
         <img
           className={"overlay_circle " + (inView && "overlay_circle-animation")}
           src="/images/circle.svg"
-          akt="profile_circle"
+          alt="profile_circle"
+          loading="lazy"
         />
       </div>
 
@@ -50,7 +47,7 @@ const Header = () => {
             }
             key={`circle-${index}`}
           >
-            <img src={circle} alt={circle}></img>
+            <img src={circle} alt={circle} loading="lazy"></img>
           </div>
         ))}
       </div>
@@ -58,4 +55,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default AppWrap(Header, "Home", "base-");

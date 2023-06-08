@@ -1,36 +1,19 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { urlFor, client } from "@/client";
+import AppWrap from "@/app/wrapper/AppWrap";
 import "./About.scss";
 
 const About = () => {
-  const abouts = [
-    {
-      title: "MERN Stack",
-      description: "I'm a good Web Developer",
-      image: "60ce44133ce5aee0e6c9cac9_Mern.png",
-    },
-    {
-      title: "Frontend Web Dev",
-      description: "I'm a good Web Developer",
-      image: "24-248816_website-development-png.png",
-    },
-    {
-      title: "Web Animations",
-      description: "I'm a good Web Developer",
-      image: "Daco_4367764.png",
-    },
-    {
-      title: "Responsive Design",
-      description: "I'm a good Web Developer",
-      image: "—Pngtree—devices responsive web design_3540001.png",
-    },
-    {
-      title: "Backend Web Dev",
-      description: "I'm a good Web Developer",
-      image: "pngegg.png",
-    },
-  ];
+  const [abouts, setAbouts] = useState([]);
+  const { ref, inView } = useInView();
+
+  useEffect(() => {
+    const query = '*[_type=="abouts"]';
+    client.fetch(query).then((data) => setAbouts(data));
+  }, []);
   return (
     <>
       <h2 className="head-text">
@@ -38,15 +21,17 @@ const About = () => {
         <span>Good Business</span>
       </h2>
 
-      <div className="app__profiles">
+      <div className="app__profiles" ref={ref}>
         {abouts.map((about, index) => (
           <motion.div
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.3, type: "tween" }}
-            className="app__profile-item"
+            className={
+              "app__profile-item " + (inView && "app__profile-item--animation")
+            }
             key={about.title + index}
           >
-            <img src={"./images/" + about.image} alt={about.title} />
+            <img src={urlFor(about.imgUrl)} alt={about.title} loading="lazy" />
             <h2 className="bold-text" style={{ marginTop: 20 }}>
               {about.title}
             </h2>
@@ -60,4 +45,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AppWrap(About, "Services", "about-");

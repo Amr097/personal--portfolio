@@ -31,13 +31,13 @@
     position: fixed;
     top: 0;
     right: 0;
-    transform: translateX(70rem);
+    transform: translateX(140rem);
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column;
     transition: transform 0.4s ease-in-out;
-    width: 68rem;
+    width: 70%;
     height: 100vh;
 
     z-index: 5;
@@ -99,7 +99,7 @@
 
 //animations
 
-@for $i from 2 through 4 {
+@for $i from 2 through 3 {
   li:nth-child(#{$i}) a.visible {
     animation-delay: #{$i * 0.17}s;
   }
@@ -109,7 +109,7 @@ li:nth-child(1) a.visible {
   animation-delay: 0.04s;
 }
 
-li:nth-child(5) a.visible {
+li:nth-child(4) a.visible {
   animation-delay: 1.5s;
 }
 

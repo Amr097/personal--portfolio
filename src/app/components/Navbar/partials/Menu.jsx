@@ -18,7 +18,7 @@ const Menu = () => {
           <HiX></HiX>
 
           <ul tabIndex="0" ref={ref}>
-            {["Home", "About", "Skills", "Work", "Contact"].map((item) => (
+            {["Home", "Services", "Projects", "Contact"].map((item) => (
               <li>
                 <a
                   className={"app__flex p-text " + (inView && "visible")}

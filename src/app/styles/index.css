@@ -10,6 +10,7 @@
   --gray-color: #6b7688;
   --brown-color: #46364a;
   --white-color: #ffffff;
+  --semi-primary-color: #edf2f8;
 }
 
 html {
@@ -21,10 +22,6 @@ html {
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
-}
-
-body {
-  height: 3000px;
 }
 
 a {
