@@ -52,7 +52,21 @@
   flex: 1;
   width: 100%;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  margin-top: 7rem;
+  gap: 5rem;
+  padding: 4rem 2rem;
+
+  @media screen and (max-width: 450px) {
+    padding: 4rem 1rem 2rem;
+  }
+}
+
+.services-app__wrapper {
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
   gap: 5rem;
   padding: 4rem 2rem;
 
@@ -73,8 +87,6 @@
   align-items: flex-end;
 
   p {
-    text-transform: uppercase;
-
     color: var(--black-color);
   }
 }

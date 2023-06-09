@@ -42,18 +42,20 @@ const Footer = () => {
   };
 
   return (
-    <div className="app__message-container">
+    <>
+      <h2 className="head-text">Take a coffee & chat with me</h2>
+
       <div className="app__footer-cards">
         <div className="app__footer-card ">
           <img src="/images/Gmail_Logo_128px.png" alt="email" loading="lazy" />
           <a href="mailto:amruser97@gmail.com" className="p-text">
-            amruser97@gmail.com
+            amruser97@gmail.com{" "}
           </a>
         </div>
         <div className="app__footer-card">
           <img src="/images/mobile.png" alt="phone" loading="lazy" />
           <a href="tel:+1 (123) 456-7890" className="p-text">
-            +20 (011) 0201-7269
+            +20 (011) 0201-7269{" "}
           </a>
         </div>
       </div>
@@ -97,8 +99,8 @@ const Footer = () => {
           <h3 className="head-text">Thank you for getting in touch!</h3>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
-export default Footer;
+export default AppWrap(Footer, "Contact", "base-");

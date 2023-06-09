@@ -7,16 +7,15 @@
 }
 
 .app__skills {
+  flex: 0.4;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  margin-top: 5rem;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 .app__skills-container {
-  flex: 0.5;
+  flex: 1;
   margin-top: 3rem;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   display: flex;
   flex-direction: column;

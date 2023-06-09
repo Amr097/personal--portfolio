@@ -36,7 +36,6 @@ const Skills = () => {
   return (
     <>
       {" "}
-      <h2 className="head-text">Take a coffee & chat with me</h2>
       <div className="app__skills">
         <div className="app__skills-container">
           <h2 className="p-text">Skills</h2>
@@ -64,7 +63,6 @@ const Skills = () => {
             ))}
           </div>
         </div>
-        <Footer />
       </div>
     </>
   );

@@ -4,9 +4,9 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { urlFor, client } from "@/client";
 import AppWrap from "@/app/wrapper/AppWrap";
-import "./About.scss";
+import "./Services.scss";
 
-const About = () => {
+const Services = () => {
   const [abouts, setAbouts] = useState([]);
   const { ref, inView } = useInView();
 
@@ -45,4 +45,4 @@ const About = () => {
   );
 };
 
-export default AppWrap(About, "Services", "about-");
+export default AppWrap(Services, "Services", "services-");

@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar/Navbar";
-import { About, Header, Skills, Work } from "./container";
+import { About, Services, Header, Skills, Work, Footer } from "./container";
 
 export default function Home() {
   return (
@@ -8,8 +8,9 @@ export default function Home() {
         <Navbar />
         <Header />
         <About />
+        <Services />
         <Work />
-        <Skills />
+        <Footer />
       </div>
     </main>
   );
