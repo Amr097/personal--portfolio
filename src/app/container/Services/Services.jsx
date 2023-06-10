@@ -27,7 +27,8 @@ const Services = () => {
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.3, type: "tween" }}
             className={
-              "app__profile-item " + (inView && "app__profile-item--animation")
+              "app__profile-item " +
+              (inView && "app__profile-item--animation").toString()
             }
             key={about.title + index}
           >

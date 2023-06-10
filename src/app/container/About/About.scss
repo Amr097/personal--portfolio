@@ -2,21 +2,66 @@
   display: flex;
   flex-direction: row-reverse;
 
+  justify-content: center;
+  align-items: center;
+
   .app__aboutme {
     flex: 1;
-    width: 100%;
     flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin-top: 3rem;
-
+    //margin-left: 5rem;
     .app__aboutme-wrapper {
       width: 60%;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: flex-end;
       align-items: flex-start;
+      gap: 2.5rem;
+
+      .mono {
+        position: relative;
+        font-family: "Inconsolata", monospace;
+        font-weight: 800;
+        text-align: left;
+        @media screen and (width<1000px) {
+          font-size: 2.2rem;
+        }
+        @media screen and (width<830px) {
+          display: inline-block;
+          width: 100%;
+        }
+      }
+
+      h2::before,
+      h2::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+      }
+
+      .about-heading-animation::before {
+        background: var(--primary-color);
+        animation: typeAnimation 5s steps(25) 0.6s forwards;
+        @media screen and (width<813px) {
+          display: none;
+          animation: none;
+        }
+      }
+      .about-heading-animation::after {
+        width: 0.2rem;
+        background: black;
+        animation: typeAnimation 5s steps(25) 0.6s forwards,
+          blink 750ms steps(25) forwards 10;
+        @media screen and (width<813px) {
+          display: none;
+          animation: none;
+        }
+      }
       p {
         display: inline-block;
 
@@ -32,13 +77,13 @@
   &:link,
   &:visited {
     min-width: 20%;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
     padding: 1.5rem;
     display: inline-block;
-    margin-top: 3.5rem;
+    margin-top: 0.5rem;
     border-radius: 20rem;
     transition: transform 0.2s;
     position: relative;
@@ -81,5 +126,21 @@
   &:hover::after {
     transform: scaleX(1.1) scaleY(1.3);
     opacity: 0;
+  }
+}
+
+//animations
+
+@keyframes typeAnimation {
+  0% {
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
   }
 }

@@ -1,5 +1,6 @@
 #Services {
   align-items: center;
+  background-color: white;
 }
 
 .app__about {
@@ -37,6 +38,10 @@
     height: 20rem;
     border-radius: 15px;
     object-fit: cover;
+  }
+
+  p {
+    font-weight: 500;
   }
 
   @media screen and (min-width: 2000px) {

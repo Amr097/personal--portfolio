@@ -18,17 +18,21 @@ const Menu = () => {
           <HiX></HiX>
 
           <ul tabIndex="0" ref={ref}>
-            {["Home", "Services", "Projects", "Contact"].map((item) => (
-              <li>
-                <a
-                  className={"app__flex p-text " + (inView && "visible")}
-                  key={`${item}`}
-                  href={`#${item}`}
-                >
-                  {item}
-                </a>
-              </li>
-            ))}
+            {["Home", "About", "Services", "Projects", "Contact"].map(
+              (item, index) => (
+                <li>
+                  <a
+                    className={
+                      "app__flex p-text " + (inView && "visible").toString()
+                    }
+                    key={`${item} + ${index}`}
+                    href={`#${item}`}
+                  >
+                    {item}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
         </div>
       }

@@ -7,18 +7,23 @@ const Navbar = () => {
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
-        <img
-          src="/images/AMR Logo - Original - 5000x5000 .png"
-          alt="Logo"
-        ></img>
+        <a href="#">
+          {" "}
+          <img
+            src="/images/AMR Logo - Original - 5000x5000 .png"
+            alt="Logo"
+          ></img>
+        </a>
       </div>
       <ul className="app__navbar-links">
-        {["Home", "About", "Services", "Projects", "Contact"].map((item) => (
-          <li className="app__flex p-text" key={`link-${item}`}>
-            <div></div>
-            <a href={`#${item}`}>{item}</a>
-          </li>
-        ))}
+        {["Home", "About", "Services", "Projects", "Contact"].map(
+          (item, index) => (
+            <li className="app__flex p-text" key={`link-${item} + ${index}`}>
+              <div></div>
+              <a href={`#${item}`}>{item}</a>
+            </li>
+          )
+        )}
       </ul>
       <Menu toggle={toggle} setToggle={setToggle} />
     </nav>

@@ -1,12 +1,12 @@
 "use client";
-
 import React, { useState } from "react";
-
 import { AppWrap } from "@/app/wrapper";
 import { urlFor, client } from "@/client";
+import { useInView } from "react-intersection-observer";
 import "./Footer.scss";
 
 const Footer = () => {
+  const { ref, inView } = useInView();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -43,7 +43,16 @@ const Footer = () => {
 
   return (
     <>
-      <h2 className="head-text">Take a coffee & chat with me</h2>
+      <h2 className="head-text" ref={ref}>
+        Take a{" "}
+        <span
+          className="contactme__heading"
+          id={(inView && "coffee").toString()}
+        >
+          Coffee
+        </span>{" "}
+        & chat with me
+      </h2>
 
       <div className="app__footer-cards">
         <div className="app__footer-card ">

@@ -5,7 +5,7 @@ const date = new Date();
 const AppWrap = (Component, idName, wrapper, classNames) =>
   function HOC() {
     return (
-      <div id={idName} className={`app__container ${classNames}`}>
+      <section id={idName} className={`app__container ${classNames}`}>
         <SocialMedia />
         <div className={`${wrapper}app__wrapper app__flex`}>
           <Component />
@@ -15,7 +15,7 @@ const AppWrap = (Component, idName, wrapper, classNames) =>
         </div>
 
         <NavigationDots active={idName} />
-      </div>
+      </section>
     );
   };
 

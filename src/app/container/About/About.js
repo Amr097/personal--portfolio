@@ -1,45 +1,37 @@
 "use client";
-import React from "react";
+import React, { use } from "react";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { AppWrap } from "@/app/wrapper";
-import { urlFor, client } from "@/client";
+import { client } from "@/client";
+import { Skills } from "..";
 
-import "./Skills.scss";
 import "./About.scss";
 
 const About = () => {
-  const [skills, setSkills] = useState([]);
-  const [experience, setExperience] = useState([]);
   const { ref, inView } = useInView();
-
+  const [resume, setResume] = useState([{ url: "", name: "" }]);
   useEffect(() => {
-    const queryExperience = '*[_type == "experiences"]';
-    const querySkill = '*[_type == "skills"]';
-    client.fetch(queryExperience).then((data) => {
-      setExperience(data);
-    });
-    client.fetch(querySkill).then((data) => {
-      let sortedSkills = {};
-      let mySkills = [];
-      for (let i = 0; i <= data.length - 1; i++) {
-        sortedSkills[data[i].order] = data[i];
-      }
-      for (let j = 0; j <= data.length; j++) {
-        if (sortedSkills[j]) {
-          mySkills.push(sortedSkills[j]);
-        }
-      }
+    const resumeLink = '*[_type == "brands"]';
 
-      setSkills(mySkills);
+    client.fetch(resumeLink).then((data) => {
+      setResume(data);
     });
   }, []);
   return (
     <>
-      <h2 className="head-text">Who Am I?</h2>
       <div className="app__about-container">
         <div className="app__aboutme">
           <div className="app__aboutme-wrapper">
+            <h2
+              ref={ref}
+              className={
+                "head-text mono " +
+                (inView && "about-heading-animation").toString()
+              }
+            >
+              My name is <span>Amr Abdelghany</span>
+            </h2>
             <p className="p-text">
               I am an Egyptian based Software Developer, One of my strongest
               ambitions is to become the best programmer I can humanly be.
@@ -50,53 +42,17 @@ const About = () => {
               Hobbies beside programming: Reading, Sports and Low combat
               narrative/puzzle heavy Games.
             </p>
-            {/* development. May describe myself as an organized person, highly
-              enthusiastic about problem-solving with high attention to detail,
-              Also a Family person who loves animals -especially birds-, reading
-              and point and click adventure/puzzle games.
-              <br />
-              <br />
-              One of my ambitions is to become the best programmer I can humanly
-              be.
-              <br />
-              Although I find everything about programming interesting, web
-              development is my passion and I love working in all of its areas :
-              Front-End, Back-End, Databases and even Security, My experience
-              mostly spans the Javascript-ecosystem. */}
 
-            <a href="" className="btn btn--white p-text">
+            <a
+              href={resume[0].name}
+              target="_blank"
+              className="btn btn--white p-text"
+            >
               View Resume
             </a>
           </div>
         </div>
-        <div className="app__skills">
-          <div className="app__skills-container">
-            <h2 className="p-text">Skills</h2>
-            <div className="app__skills-list" ref={ref}>
-              {skills.map((skill, index) => (
-                <div
-                  className={
-                    "app__skills-item app__flex " +
-                    (inView && "skills-item-animation")
-                  }
-                  key={skill.name}
-                >
-                  <div
-                    className="app__flex"
-                    style={{ backgroundColor: skill.bgColor }}
-                  >
-                    <img
-                      src={urlFor(skill.icon)}
-                      alt={skill.name}
-                      loading="lazy"
-                    />
-                  </div>
-                  <p className="p-text">{skill.name}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        <Skills />
       </div>
     </>
   );

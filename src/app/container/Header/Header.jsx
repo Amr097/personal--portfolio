@@ -12,7 +12,7 @@ const Header = () => {
       <div className="app__header-info">
         <div className="app__header-badge">
           <div className="badge-cmp app__flex badge-cmp-animation">
-            <span className={inView && "span-animation"}>👋</span>
+            <span className={inView ? "span-animation" : undefined}>👋</span>
             <div style={{ marginLeft: 20 }}>
               <p className="p-text">Hello I am</p>
               <h1 className="head-text">Amr</h1>
@@ -28,7 +28,10 @@ const Header = () => {
       <div className="app__header-img">
         <img src="/images/one.png" alt="profile_bg"></img>
         <img
-          className={"overlay_circle " + (inView && "overlay_circle-animation")}
+          className={
+            "overlay_circle " +
+            (inView ? "overlay_circle-animation" : undefined)
+          }
           src="/images/circle.svg"
           alt="profile_circle"
           loading="lazy"
@@ -43,7 +46,8 @@ const Header = () => {
         ].map((circle, index) => (
           <div
             className={
-              "circle-cmp app__flex " + (inView && "circle-cmp-animation")
+              "circle-cmp app__flex " +
+              (inView ? "circle-cmp-animation" : undefined)
             }
             key={`circle-${index}`}
           >

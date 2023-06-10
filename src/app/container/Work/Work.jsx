@@ -33,7 +33,7 @@ const Work = () => {
   return (
     <>
       <h2 className="head-text">
-        My Creative <span>Portfolio</span> Section
+        My Creative <span>Projects</span> Section
       </h2>
       <div className="app__work-filter">
         <div>
@@ -58,7 +58,11 @@ const Work = () => {
           {filterWork.map((work, index) => (
             <div className="app__work-item app-flex" key={index}>
               <div className="app__work-img app__flex">
-                <img src={urlFor(work.imgUrl)} alt={work.name} loading="lazy" />
+                <img
+                  src={urlFor(work.imgUrl)}
+                  alt={work.title}
+                  loading="lazy"
+                />
                 <motion.div
                   whileHover={{ opacity: [0, 1] }}
                   transition={{
@@ -112,4 +116,4 @@ const Work = () => {
   );
 };
 
-export default AppWrap(Work, "Projects", "base-");
+export default AppWrap(Work, "Projects", "works-");

@@ -17,8 +17,8 @@
 
 .app__header {
   flex: 1;
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   flex-direction: row;
 
   padding: 8rem 3rem 0;
@@ -41,7 +41,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    height: 100%;
+    max-height: 100%;
 
     @media screen and (max-width: 2000px) {
       width: 100%;
@@ -50,7 +50,8 @@
   }
 
   .app__header-badge {
-    width: 100%;
+    max-width: 100%;
+    align-self: flex-end;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -64,6 +65,11 @@
       flex-direction: row;
       width: auto;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+      @media screen and (width < 800px) {
+        padding: 1.5rem 2rem;
+        border-radius: 20px;
+      }
     }
     .tag-cmp {
       flex-direction: column;
@@ -80,6 +86,12 @@
         text-align: left;
         font-size: 1.3rem;
       }
+
+      @media screen and (width < 800px) {
+        p {
+          font-size: 1rem;
+        }
+      }
     }
 
     .tag-cmp-animation {
@@ -90,11 +102,30 @@
       animation-fill-mode: forwards;
     }
 
+    @media screen and (width < 800px) {
+      .tag-cmp-animation {
+        animation-name: tagCmpAnimation800;
+        animation-duration: 1.5s;
+        animation-delay: 2.5s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+      }
+    }
+
     .badge-cmp {
-      transform: translateY(9.5rem);
+      transform: translateY(9rem);
       h1,
       p {
         font-size: 1.6rem;
+      }
+
+      @media screen and (width < 800px) {
+        h1 {
+          font-size: 1.3rem;
+        }
+        p {
+          font-size: 1rem;
+        }
       }
     }
 
@@ -110,6 +141,10 @@
 
       @media screen and (min-width: 2000px) {
         font-size: 5rem;
+      }
+
+      @media screen and (width < 800px) {
+        font-size: 2rem;
       }
     }
     span:hover {
@@ -268,20 +303,20 @@
   25% {
     opacity: 1;
     scale: 1;
-    transform: translateY(9.5rem) rotate(0deg);
+    transform: translateY(9rem) rotate(0deg);
   }
 
   80% {
     opacity: 1;
     scale: 1;
-    transform: translateY(9.5rem) rotate(0deg);
+    transform: translateY(9rem) rotate(0deg);
   }
   81% {
-    transform: translateY(9.5rem) rotate(15deg);
+    transform: translateY(9rem) rotate(15deg);
   }
 
   95% {
-    transform: translateY(9.5rem) rotate(15deg);
+    transform: translateY(9rem) rotate(15deg);
   }
 
   100% {
@@ -293,35 +328,75 @@
 @keyframes tagCmpAnimation {
   0% {
     opacity: 1;
-    transform: translateX(-35rem);
+    transform: translate(-80rem, -5rem);
   }
 
   20% {
-    transform: translateX(-20rem);
+    transform: translate(-20rem, -2rem);
   }
 
   34% {
-    transform: translateX(-20rem);
+    transform: translate(-20rem, -2rem);
   }
 
   35% {
-    transform: translate(-20rem, 0.7rem);
+    transform: translate(-20rem, -3rem);
   }
 
   40% {
-    transform: translate(-20rem, -0.7rem);
+    transform: translate(-20rem, -2rem);
   }
 
   45% {
-    transform: translate(-20rem, 0.7rem);
+    transform: translate(-20rem, -3rem);
   }
 
   50% {
-    transform: translate(-20rem, -0.7rem);
+    transform: translate(-20rem, -2rem);
   }
 
   95% {
-    transform: translateX(-25rem);
+    transform: translate(-25rem, -2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes tagCmpAnimation800 {
+  0% {
+    opacity: 1;
+    transform: translate(-80rem, 1rem);
+  }
+
+  20% {
+    transform: translate(-15rem, 1rem);
+  }
+
+  34% {
+    transform: translate(-15rem, 1.5rem);
+  }
+
+  35% {
+    transform: translate(-15rem, 0.6rem);
+  }
+
+  40% {
+    transform: translate(-15rem, 1.5rem);
+  }
+
+  45% {
+    transform: translate(-15rem, 0.6rem);
+  }
+
+  50% {
+    transform: translate(-15rem, 1.5rem);
+  }
+
+  95% {
+    transform: translate(-25rem, 1rem);
   }
 
   100% {

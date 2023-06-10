@@ -2,11 +2,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { AppWrap } from "@/app/wrapper";
 import { urlFor, client } from "@/client";
 
 import "./Skills.scss";
-import { Footer } from "..";
+
 const Skills = () => {
   const [skills, setSkills] = useState([]);
   const [experience, setExperience] = useState([]);
@@ -35,7 +34,6 @@ const Skills = () => {
   }, []);
   return (
     <>
-      {" "}
       <div className="app__skills">
         <div className="app__skills-container">
           <h2 className="p-text">Skills</h2>
@@ -44,7 +42,7 @@ const Skills = () => {
               <div
                 className={
                   "app__skills-item app__flex " +
-                  (inView && "skills-item-animation")
+                  (inView && "skills-item-animation").toString()
                 }
                 key={skill.name}
               >
@@ -68,4 +66,4 @@ const Skills = () => {
   );
 };
 
-export default AppWrap(Skills, "Contact", "base-");
+export default Skills;
