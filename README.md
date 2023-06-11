@@ -18,15 +18,21 @@ Hence i tried my best making to create something that:
 2- Used Sanity Api Service for easy real time section updates and product felixability.
 3- Images are lazy loaded for better performance.
 
-## How it looks?
+## Take a look?
 
 ### Frontend
 
+![2023-06-11 (8)](https://github.com/Amr097/personal--portfolio/assets/127849429/4503b499-72c1-4174-a831-9d4b14388a57)
+![2023-06-11 (9)](https://github.com/Amr097/personal--portfolio/assets/127849429/cb103f6f-120e-4e39-80d0-c2e956baec27)
+![2023-06-11 (10)](https://github.com/Amr097/personal--portfolio/assets/127849429/5ea3f0ed-238b-4a81-a516-1ee38ff15a24)
+
+
 ### Backend
+![2023-06-11 (20)](https://github.com/Amr097/personal--portfolio/assets/127849429/d1e85470-9009-4b04-bcbb-6452796fe7a3)
 
 ## Installation
 
-### Clone this repository
+Clone this repository
 
 $ git clone
 
