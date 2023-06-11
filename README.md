@@ -7,7 +7,8 @@ Personal Portfolio Web-app Built with React/Nextjs, Scss on the Frontend && Sani
 Two problems faced me with my old Portfolio:
 
 1- It was a little boring and not so so modren looking
-2- It was a real pain to update the sections since i had to hard code every change i needed to make,So my motivation building this project was solving these two problems.
+
+2- It was a real pain to update the sections since i had to hard code every change i needed to make, So my motivation building this project was solving these two problems.
 
 Hence i tried my best making to create something that:
 1-Looks modren and include some animations to keep the audience engaged and more willing to keep scrolling.
