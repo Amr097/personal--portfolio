@@ -18,9 +18,13 @@ Hence i tried my best making to create something that:
 
 ## Features
 
+
 1- Modern aesthetics, animations and Responsivness to most screen sizes.
+
 2- Used Sanity Api Service for easy real time section updates and product felixability.
+
 3- Images are lazy loaded for better performance.
+
 
 ## Take a look?
 
