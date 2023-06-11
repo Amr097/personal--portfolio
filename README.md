@@ -11,7 +11,9 @@ Two problems faced me with my old Portfolio:
 2- It was a real pain to update the sections since i had to hard code every change i needed to make, So my motivation building this project was solving these two problems.
 
 Hence i tried my best making to create something that:
+
 1-Looks modren and include some animations to keep the audience engaged and more willing to keep scrolling.
+
 2-Easy to update to provide a good owner experience (In this case the owner is me personally :D)
 
 ## Features
