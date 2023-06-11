@@ -11,11 +11,16 @@ import "./About.scss";
 const About = () => {
   const { ref, inView } = useInView();
   const [resume, setResume] = useState([{ url: "", name: "" }]);
+  const [summary, setSummary] = useState("");
   useEffect(() => {
     const resumeLink = '*[_type == "brands"]';
-
+    const aboutMe = '*[_type == "summary"]';
     client.fetch(resumeLink).then((data) => {
       setResume(data);
+    });
+    client.fetch(aboutMe).then((data) => {
+      setSummary(data[0].about);
+      console.log(data[0].about);
     });
   }, []);
   return (
@@ -32,16 +37,10 @@ const About = () => {
             >
               My name is <span>Amr Abdelghany</span>
             </h2>
-            <p className="p-text">
-              I am an Egyptian based Software Developer, One of my strongest
-              ambitions is to become the best programmer I can humanly be.
-              Although I find everything about programming interesting, web
-              development is my passion and I enjoy facing challenges across the
-              entire stack. <br />
-              <br />
-              Hobbies beside programming: Reading, Sports and Low combat
-              narrative/puzzle heavy Games.
-            </p>
+            <p
+              className="p-text"
+              dangerouslySetInnerHTML={{ __html: summary }}
+            ></p>
 
             <a
               href={resume[0].name}
