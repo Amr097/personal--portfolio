@@ -75,6 +75,7 @@
       flex-direction: column;
       margin-top: 3rem;
       opacity: 0;
+      position: relative;
 
       @media screen and (max-width: 800px) {
         margin-top: 1.7rem;
@@ -92,12 +93,26 @@
           font-size: 1rem;
         }
       }
+      .angry-toon {
+        width: 17px;
+        height: 17px;
+        object-fit: contain;
+        position: absolute;
+        bottom: 26.5%;
+        right: 19%;
+        opacity: 0;
+        animation-name: angryAnimation;
+        animation-duration: 1s;
+        animation-delay: 2.7s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+      }
     }
 
     .tag-cmp-animation {
       animation-name: tagCmpAnimation;
-      animation-duration: 1.5s;
-      animation-delay: 2.5s;
+      animation-duration: 2.5s;
+      animation-delay: 2s;
       animation-timing-function: ease-in-out;
       animation-fill-mode: forwards;
     }
@@ -105,8 +120,8 @@
     @media screen and (width < 800px) {
       .tag-cmp-animation {
         animation-name: tagCmpAnimation800;
-        animation-duration: 1.5s;
-        animation-delay: 2.5s;
+        animation-duration: 2.5s;
+        animation-delay: 2s;
         animation-timing-function: ease-in-out;
         animation-fill-mode: forwards;
       }
@@ -131,7 +146,7 @@
 
     .badge-cmp-animation {
       animation-name: badgeCmpAnimation;
-      animation-duration: 4s;
+      animation-duration: 4.4s;
       animation-timing-function: ease-in-out;
       animation-fill-mode: forwards;
     }
@@ -355,8 +370,20 @@
     transform: translate(-20rem, -2rem);
   }
 
-  95% {
+  55% {
+    transform: translate(-20rem, -3rem);
+  }
+
+  60% {
+    transform: translate(-20rem, -2rem);
+  }
+
+  80% {
     transform: translate(-25rem, -2rem);
+  }
+
+  95% {
+    transform: translate(-30rem, -2rem);
   }
 
   100% {
@@ -453,5 +480,31 @@
   100% {
     opacity: 1;
     scale: 1;
+  }
+}
+
+@keyframes angryAnimation {
+  0% {
+    opacity: 1;
+    scale: 1.1;
+  }
+  25% {
+    opacity: 1;
+    scale: 0.9;
+  }
+  50% {
+    opacity: 1;
+    scale: 1.1;
+  }
+  75% {
+    opacity: 1;
+    scale: 0.9;
+  }
+  99% {
+    opacity: 1;
+    scale: 1.1;
+  }
+  100% {
+    opacity: 0;
   }
 }

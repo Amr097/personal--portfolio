@@ -21,6 +21,11 @@ const Header = () => {
           <div className="tag-cmp app__flex tag-cmp-animation">
             <p className="p-text">Web Developer</p>
             <p className="p-text">Freelancer</p>
+            <img
+              className="angry-toon"
+              src="images/—Pngtree—cartoon angry symbols_5990755.png"
+              alt=""
+            />
           </div>
         </div>
       </div>
