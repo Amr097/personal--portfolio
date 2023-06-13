@@ -29,13 +29,13 @@ Hence i tried my best making to create something that:
 ## Take a look?
 
 ### Frontend
+![2023-06-11 (8)](https://github.com/Amr097/personal--portfolio/assets/127849429/70803bbe-7bc6-41ca-9644-8221b8aa10ce)
 
-![2023-06-11 (8)](https://github.com/Amr097/personal--portfolio/assets/127849429/4503b499-72c1-4174-a831-9d4b14388a57)
-![2023-06-11 (9)](https://github.com/Amr097/personal--portfolio/assets/127849429/cb103f6f-120e-4e39-80d0-c2e956baec27)
-
+![2023-06-11 (9)](https://github.com/Amr097/personal--portfolio/assets/127849429/a102cf88-63c3-4f8e-9ef9-01681e1f62f1)
 
 ### Backend
-![2023-06-11 (20)](https://github.com/Amr097/personal--portfolio/assets/127849429/d1e85470-9009-4b04-bcbb-6452796fe7a3)
+
+![2023-06-11 (20)](https://github.com/Amr097/personal--portfolio/assets/127849429/229972a1-9213-4e24-b1e6-f3efd9af9f35)
 
 ## Installation
 
