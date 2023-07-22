@@ -20,7 +20,6 @@ const About = () => {
     });
     client.fetch(aboutMe).then((data) => {
       setSummary(data[0].about);
-      console.log(data[0].about);
     });
   }, []);
   return (

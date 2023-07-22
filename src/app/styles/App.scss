@@ -42,9 +42,12 @@
   width: 100%;
   flex-direction: column;
   padding: 4rem 2rem;
-  //margin-top: 5rem;
+
   @media screen and (max-width: 450px) {
     padding: 4rem 1rem 2rem;
+  }
+  @media screen and (width <= 78.125em) {
+    margin-top: 5rem;
   }
 }
 
@@ -106,6 +109,10 @@
 
   p {
     color: var(--black-color);
+  }
+
+  @media screen and (width <= 78.125em) {
+    display: none;
   }
 }
 

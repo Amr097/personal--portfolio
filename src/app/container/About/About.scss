@@ -5,15 +5,23 @@
   justify-content: center;
   align-items: center;
 
+  @media screen and (width <= 78.125em) {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    grid-row-gap: 5rem;
+  }
+
   .app__aboutme {
     flex: 1;
     flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    //margin-left: 5rem;
+
     .app__aboutme-wrapper {
-      width: 60%;
+      width: 90%;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -47,10 +55,6 @@
       .about-heading-animation::before {
         background: var(--primary-color);
         animation: typeAnimation 5s steps(25) 0.6s forwards;
-        @media screen and (width<813px) {
-          display: none;
-          animation: none;
-        }
       }
       .about-heading-animation::after {
         width: 0.2rem;

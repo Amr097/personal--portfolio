@@ -14,10 +14,9 @@ Hence i tried my best making to create something that:
 
 1-Looks modren and include some animations to keep the audience engaged and more willing to keep scrolling.
 
-2-Easy to update to provide a good owner experience (In this case the owner is me personally :D)
+2-Easy to update to provide a good owner experience (In this case the owner is me personally :D).
 
 ## Features
-
 
 1- Modern aesthetics, animations and Responsivness to most screen sizes.
 
@@ -25,10 +24,10 @@ Hence i tried my best making to create something that:
 
 3- Images are lazy loaded for better performance.
 
-
 ## Take a look?
 
 ### Frontend
+
 ![2023-06-11 (8)](https://github.com/Amr097/personal--portfolio/assets/127849429/70803bbe-7bc6-41ca-9644-8221b8aa10ce)
 
 ![2023-06-11 (9)](https://github.com/Amr097/personal--portfolio/assets/127849429/a102cf88-63c3-4f8e-9ef9-01681e1f62f1)
