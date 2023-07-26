@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import "./Navbar.scss";
 import Menu from "./partials/Menu";
 const Navbar = () => {
@@ -18,7 +19,7 @@ const Navbar = () => {
       <ul className="app__navbar-links">
         {["Home", "About", "Services", "Projects", "Contact"].map(
           (item, index) => (
-            <li className="app__flex p-text" key={`link-${item} + ${index}`}>
+            <li className="app__flex p-text" key={uuidv4()}>
               <div></div>
               <a href={`#${item}`}>{item}</a>
             </li>

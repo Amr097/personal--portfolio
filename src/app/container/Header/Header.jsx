@@ -1,6 +1,6 @@
 "use client";
-
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 import { useInView } from "react-intersection-observer";
 import "./Header.scss";
 import AppWrap from "@/app/wrapper/AppWrap";
@@ -48,13 +48,13 @@ const Header = () => {
           "/images/sass.png",
           "/images/react.png",
           "/images/nextjs.256x256.png",
-        ].map((circle, index) => (
+        ].map((circle) => (
           <div
             className={
               "circle-cmp app__flex " +
               (inView ? "circle-cmp-animation" : undefined)
             }
-            key={`circle-${index}`}
+            key={uuidv4()}
           >
             <img src={circle} alt={circle} loading="lazy"></img>
           </div>

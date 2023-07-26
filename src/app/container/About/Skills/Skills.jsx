@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { urlFor, client } from "@/client";
@@ -38,13 +39,13 @@ const Skills = () => {
         <div className="app__skills-container">
           <h2 className="p-text">Skills</h2>
           <div className="app__skills-list" ref={ref}>
-            {skills.map((skill, index) => (
+            {skills.map((skill) => (
               <div
                 className={
                   "app__skills-item app__flex " +
                   (inView && "skills-item-animation").toString()
                 }
-                key={skill.name}
+                key={uuidv4()}
               >
                 <div
                   className="app__flex"

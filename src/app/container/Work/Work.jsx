@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import { useState, useEffect } from "react";
-import { easeInOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { v4 as uuidv4 } from "uuid";
 import { AppWrap } from "@/app/wrapper";
 import { urlFor, client } from "@/client";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
@@ -37,9 +38,9 @@ const Work = () => {
       </h2>
       <div className="app__work-filter">
         <div>
-          {["React", "Express", "All"].map((item, index) => (
+          {["React", "Express", "All"].map((item) => (
             <div
-              key={index}
+              key={uuidv4()}
               onClick={() => handleWorkFiler(item)}
               className={`app__work-filter-item app__flex p-text ${
                 activeFilter === item ? "item-active" : ""
@@ -55,8 +56,8 @@ const Work = () => {
           transition={{ duration: 0.5, delayChildren: 0.5 }}
           className="app__work-portfolio"
         >
-          {filterWork.map((work, index) => (
-            <div className="app__work-item app-flex" key={index}>
+          {filterWork.map((work) => (
+            <div className="app__work-item app-flex" key={uuidv4()}>
               <div className="app__work-img app__flex">
                 <img
                   src={urlFor(work.imgUrl)}
