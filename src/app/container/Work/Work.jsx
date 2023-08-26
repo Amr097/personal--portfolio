@@ -31,6 +31,7 @@ const Work = () => {
       setFilterWork(data);
     });
   }, []);
+
   return (
     <>
       <h2 className="head-text">
@@ -102,12 +103,24 @@ const Work = () => {
               </div>
               <div className="app__work-content app__flex">
                 <h4 className="bold-text">{work.title}</h4>
+                <ul className="hash-list">
+                  {work.hashes.map((hash) => {
+                    return (
+                      <li
+                        className="hash-item"
+                        style={{ color: hash.split("/")[1] }}
+                      >
+                        {hash.split("/")[0]}
+                      </li>
+                    );
+                  })}
+                </ul>
                 <p className="p-text" style={{ marginTop: 10 }}>
                   {work.description}
                 </p>
-                <div className="app__work-tag app__flex">
-                  <a className="p-text">{work.tags[0]}</a>
-                </div>
+                {/* <div className="app__work-tag app__flex">
+                  <a className="card-text">{work.tags[0]}</a>
+                </div> */}
               </div>
             </div>
           ))}

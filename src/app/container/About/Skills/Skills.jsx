@@ -37,7 +37,7 @@ const Skills = () => {
     <>
       <div className="app__skills">
         <div className="app__skills-container">
-          <h2 className="p-text">Skills</h2>
+          <h2 className="p-text skills-heading">Skills</h2>
           <div className="app__skills-list" ref={ref}>
             {skills.map((skill) => (
               <div
@@ -57,7 +57,7 @@ const Skills = () => {
                     loading="lazy"
                   />
                 </div>
-                <p className="p-text">{skill.name}</p>
+                <p className="skills-text">{skill.name}</p>
               </div>
             ))}
           </div>

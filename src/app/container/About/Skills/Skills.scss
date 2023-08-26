@@ -25,6 +25,10 @@
     width: 100%;
     flex-direction: column;
   }
+
+  .skills-heading {
+    margin-bottom: 0.5rem;
+  }
 }
 
 .app__skills-list {
@@ -73,6 +77,10 @@
     &:hover {
       box-shadow: 0 0 25px #eae9ea;
     }
+  }
+
+  .skills-text {
+    font-size: 1.16rem;
   }
 }
 
