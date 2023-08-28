@@ -8,7 +8,6 @@ export default function Home() {
       <div
         className="app"
         onClick={(e) => {
-          console.log(document.querySelector("#checkbox").checked);
           e.target !== document.querySelector("#hamMenu") &&
           e.target !== document.querySelector(".visible") &&
           e.target !== document.querySelector("#checkbox")

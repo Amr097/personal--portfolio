@@ -17,8 +17,8 @@ const Services = () => {
   return (
     <>
       <h2 className="head-text">
-        I Know That <span>Good Development</span> <br /> means {""}
-        <span>Good Business</span>
+        What We <span>Offer</span> For <br /> {""}
+        <span>Your Business</span>
       </h2>
 
       <div className="app__profiles" ref={ref}>
